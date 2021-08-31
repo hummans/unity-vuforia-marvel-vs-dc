@@ -27,7 +27,6 @@ sysinfo.txt
 *.user
 *.userprefs
 *.pidb
-*.tgz
 .DS_Store
 
 ###
@@ -41,3 +40,12 @@ sysinfo.txt
 Icon?
 ehthumbs.db
 Thumbs.db
+
+###
+# Ignore Packages
+###
+
+*.tgz
+.tgz
+Packages/com.ptc.vuforia.engine-10.1.4.tgz
+[Pp]ackages/
