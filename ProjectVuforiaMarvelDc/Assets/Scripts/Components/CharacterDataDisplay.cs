@@ -5,6 +5,7 @@ using UniRx;
 using ViewModel;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 namespace Components
 {
@@ -12,7 +13,10 @@ namespace Components
     {
         public RawImage characterImage;
         public TextMeshProUGUI hitsLabel;
+        public TextMeshProUGUI nextAttackLabel;
+
         public CharacterData characterData;
+        public CharacterFight characterFight;
 
         void Start()
         {
@@ -20,7 +24,21 @@ namespace Components
                 .Subscribe(UpdateHits)
                 .AddTo(this);
             
+            characterFight.nextAttack
+                .Subscribe(UpdateNextAttack)
+                .AddTo(this);
+            
             characterImage.texture = characterData.characterImage;
+        }
+
+        private void UpdateNextAttack(int value)
+        {
+            if(value <= 0)
+            {
+                nextAttackLabel.text = "Go!";
+                return;
+            }
+            nextAttackLabel.text = value.ToString();
         }
 
         void UpdateHits(int hits)

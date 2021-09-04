@@ -24,6 +24,7 @@ namespace Components
             this.figthSystem = _fightSystem;
             this.damageSystem = _damageSystem;
             
+            characterData.currentHits.Value = 0;
             damageSystem.currentLife.Value = damageSystem.maximumLife;
             characterState = CharacterState.Game;
 

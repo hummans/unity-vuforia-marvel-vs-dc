@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 25
   force: 2
-  range: 10
-  rate: 3
+  rate: 4
+  nextAttack:
+    value: 0

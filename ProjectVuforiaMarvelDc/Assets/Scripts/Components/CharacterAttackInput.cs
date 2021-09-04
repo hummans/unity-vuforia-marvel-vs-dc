@@ -12,6 +12,8 @@ namespace Components
     {
         public GameFactoryCmd gameFactoryCmd; 
         public Character character;
+
+        private float _nextFire = 0f;
  
         void OnTriggerEnter(Collider collider)
         {
@@ -21,21 +23,31 @@ namespace Components
 
             if(damagableCollision != null & characterCollision != null & character.GetAttackState())
             {
-                if(characterCollision.characterData.characterId != character.characterData.characterId)
-                {
-                    // If is not the player
-                    Debug.Log($"Trigger enter in damagable ({characterCollision.characterData.characterName} with position {character.GetCharacterPosition()})");
-                    gameFactoryCmd.PerfomAttack(character.characterData, character.figthSystem, characterCollision.characterData, damagableCollision.damageSystem).Execute();
-                }
-                else 
-                {
-                    Debug.Log("Trigger enter is not accepted because is the player");
-                }
+                Attack(characterCollision, damagableCollision);
             }
             else 
             {
-                Debug.Log("[CharacterAttackInput] Trigger enter but doesn't have damagable");
+                Debug.Log("Trigger enter but doesn't have damagable");
             }
+        }
+
+        private void Attack(ICharacter characterCollision, IDamage damagableCollision)
+        {
+            if(_nextFire > 0 || characterCollision.characterData.characterId == character.characterData.characterId)
+                return;
+                         
+            Debug.Log($"Trigger enter in damagable ({characterCollision.characterData.characterName} with position {character.GetCharacterPosition()})");
+            gameFactoryCmd.PerfomAttack(character.characterData, character.figthSystem, characterCollision.characterData, damagableCollision.damageSystem).Execute();
+            _nextFire = character.figthSystem.rate;
+        }
+
+        void Update()
+        {
+            if(_nextFire <= 0)
+                return;
+
+            _nextFire -= Time.deltaTime;
+            character.figthSystem.nextAttack.Value = (Int32)Math.Round(_nextFire);
         }
     }
 }

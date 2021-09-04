@@ -8,8 +8,8 @@ namespace ViewModel
     {
         public int damage;
         public float force;
-        public int range;
         public int rate;
+        public IntReactiveProperty nextAttack;
         public ISubject<CharacterMotion> OnCharacterAttack = new Subject<CharacterMotion>();
     }
 }
