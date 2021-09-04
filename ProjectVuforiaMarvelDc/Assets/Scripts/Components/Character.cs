@@ -6,10 +6,11 @@ using ViewModel;
 
 namespace Components
 {
-    public class Character : MonoBehaviour, IDamage, IFight
+    public class Character : MonoBehaviour, ICharacter, IDamage, IFight
     {
         [SerializeField] private CharacterData _characterData;
         public CharacterData characterData { get; set; }
+        public CharacterState characterState { get; set; }
 
         [SerializeField] private CharacterFight _fightSystem;
         public CharacterFight figthSystem { get; set; }
@@ -24,6 +25,36 @@ namespace Components
             this.damageSystem = _damageSystem;
             
             damageSystem.currentLife.Value = damageSystem.maximumLife;
+            characterState = CharacterState.Game;
+
+            damageSystem.OnCharacterGameOver
+                .Subscribe(OnCharacterGameOver)
+                .AddTo(this);
         }
+
+        private void OnCharacterGameOver(bool isGameOver)
+        {
+            characterState = CharacterState.GameOver;
+        }
+
+        public Vector3 GetCharacterPosition()
+        {
+            return this.gameObject.transform.position;
+        }
+
+        public bool GetAttackState()
+        {
+            if(characterState == CharacterState.Game)
+                return true;
+            
+            return false;
+        }
+    }
+
+    public enum CharacterState
+    {
+        Game,
+        Pause,
+        GameOver
     }
 }

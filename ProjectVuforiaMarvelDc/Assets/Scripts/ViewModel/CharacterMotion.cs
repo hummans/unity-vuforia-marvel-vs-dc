@@ -7,7 +7,6 @@ namespace ViewModel
     [CreateAssetMenu(fileName = "Motion", menuName = "Scriptable/Character Motion")]
     public class CharacterMotion : ScriptableObject
     {
-        public int energyCost;
         public string motionName;
     }
 }

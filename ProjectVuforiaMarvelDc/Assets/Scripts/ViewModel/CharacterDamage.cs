@@ -10,6 +10,7 @@ namespace ViewModel
         public int warningLife;
         public int maximumLife;
         public ISubject<CharacterMotion> OnCharacterDefense = new Subject<CharacterMotion>();
+        public ISubject<bool> OnCharacterGameOver = new Subject<bool>();
     }
 }
 

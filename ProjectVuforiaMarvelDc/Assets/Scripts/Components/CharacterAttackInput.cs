@@ -4,6 +4,7 @@ using UnityEngine;
 using ViewModel;
 using UniRx;
 using Commands;
+using System;
 
 namespace Components
 {
@@ -11,15 +12,29 @@ namespace Components
     {
         public GameFactoryCmd gameFactoryCmd; 
         public Character character;
-
+ 
         void OnTriggerEnter(Collider collider)
         {
             // Attack
-            IDamage damagable = collider.gameObject.GetComponent<IDamage>();
-            if(damagable != null)
+            ICharacter characterCollision = collider.gameObject.GetComponent<ICharacter>();
+            IDamage damagableCollision = collider.gameObject.GetComponent<IDamage>();
+
+            if(damagableCollision != null & characterCollision != null & character.GetAttackState())
             {
-                Debug.Log("Trigger enter!!");
-                gameFactoryCmd.PerfomAttack(character.characterData, character.figthSystem, damagable.damageSystem).Execute();
+                if(characterCollision.characterData.characterId != character.characterData.characterId)
+                {
+                    // If is not the player
+                    Debug.Log($"Trigger enter in damagable ({characterCollision.characterData.characterName} with position {character.GetCharacterPosition()})");
+                    gameFactoryCmd.PerfomAttack(character.characterData, character.figthSystem, characterCollision.characterData, damagableCollision.damageSystem).Execute();
+                }
+                else 
+                {
+                    Debug.Log("Trigger enter is not accepted because is the player");
+                }
+            }
+            else 
+            {
+                Debug.Log("[CharacterAttackInput] Trigger enter but doesn't have damagable");
             }
         }
     }

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517bab92d3054484d9f8e86d81da922e, type: 3}
   m_Name: FlashData
   m_EditorClassIdentifier: 
+  characterId: b154
   characterName: Flash
   characterImage: {fileID: 2800000, guid: 094c8c1e151df634992a2ed783734256, type: 3}
   currentHits:

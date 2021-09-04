@@ -16,7 +16,7 @@ PlayerSettings:
   productName: TP1_Vuforia_AR
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0.25490198, g: 0.25490198, b: 0.25490198, a: 1}
+  m_SplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 0
   m_SplashScreenOverlayOpacity: 0
@@ -43,8 +43,6 @@ PlayerSettings:
   - logo: {fileID: 21300000, guid: e455577836a0c2e4db54f0b3bbb70880, type: 3}
     duration: 2
   - logo: {fileID: 21300000, guid: 2ce8e78b347b73a43acbd3fd310bd122, type: 3}
-    duration: 2
-  - logo: {fileID: 21300000, guid: 7eb88a8ee66b4994794c072d37dca746, type: 3}
     duration: 2
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
