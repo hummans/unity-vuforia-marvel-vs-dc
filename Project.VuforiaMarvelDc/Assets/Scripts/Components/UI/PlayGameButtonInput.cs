@@ -11,6 +11,7 @@ public class PlayGameButtonInput : MonoBehaviour
 {
     public Slider loadingSlider;
     public TextMeshProUGUI playText;
+    public GameObject characters;
     public int secondToWait = 5;
 
     string _sceneToOpen = "";
@@ -25,6 +26,7 @@ public class PlayGameButtonInput : MonoBehaviour
         _sceneToOpen = scenename;
 
         this.gameObject.GetComponent<Button>().enabled = false;
+        characters.SetActive(false);
         playText.gameObject.SetActive(false);
         loadingSlider.gameObject.SetActive(true);
         loadingSlider.maxValue = secondToWait;
