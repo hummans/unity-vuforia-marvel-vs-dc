@@ -25,7 +25,7 @@ public class PlayGameButtonInput : MonoBehaviour
         _sceneToOpen = scenename;
 
         this.gameObject.GetComponent<Button>().enabled = false;
-        playText.color = new Color(0,0,0,0);
+        playText.gameObject.SetActive(false);
         loadingSlider.gameObject.SetActive(true);
         loadingSlider.maxValue = secondToWait;
     }

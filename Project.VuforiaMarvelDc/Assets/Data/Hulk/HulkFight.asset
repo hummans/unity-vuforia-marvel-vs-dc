@@ -15,5 +15,6 @@ MonoBehaviour:
   damage: 25
   force: 2
   rate: 4
+  distanceAttack: 40
   nextAttack:
     value: 0

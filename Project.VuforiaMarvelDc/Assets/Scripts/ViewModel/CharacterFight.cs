@@ -9,7 +9,9 @@ namespace ViewModel
         public int damage;
         public float force;
         public int rate;
-        public IntReactiveProperty nextAttack;
+        [Range(10,100)] public float distanceAttack;
+
+        public IntReactiveProperty nextAttack {get; set;}
         public ISubject<CharacterMotion> OnCharacterAttack = new Subject<CharacterMotion>();
     }
 }
