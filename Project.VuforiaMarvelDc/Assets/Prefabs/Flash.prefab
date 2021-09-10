@@ -1,5 +1,51 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1348229552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1348229553}
+  - component: {fileID: 1348229554}
+  m_Layer: 0
+  m_Name: PointAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1348229553
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348229552}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: -0, w: -0.7071068}
+  m_LocalPosition: {x: 0, y: 0.015000001, z: 0.012999997}
+  m_LocalScale: {x: 0.0009999992, y: 0.001, z: 0.0009999992}
+  m_Children: []
+  m_Father: {fileID: 2417723156129432690}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1348229554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348229552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72c33276c83808f49bae11a604d5db7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameFactoryCmd: {fileID: 11400000, guid: 89823967f77f23744837d0512a2cbaee, type: 2}
+  character: {fileID: 326685085}
+  pointAttack: {fileID: 1348229553}
 --- !u!1 &2417723156129339392
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,11 +1342,11 @@ Transform:
   m_GameObject: {fileID: 2417723156129339474}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1000, y: 1000, z: 1000}
+  m_LocalScale: {x: 1000.0005, y: 1000, z: 1000.0005}
   m_Children:
   - {fileID: 2417723156129432696}
   - {fileID: 2417723156129432652}
-  - {fileID: 2028056434574436919}
+  - {fileID: 1348229553}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -1757,62 +1803,3 @@ Transform:
   m_Father: {fileID: 2417723156129432600}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 4.257089, y: -2.7552235, z: 0.30524552}
---- !u!1 &4752308332210704769
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2028056434574436919}
-  - component: {fileID: 8269769458335602861}
-  - component: {fileID: 7041215277899132877}
-  m_Layer: 0
-  m_Name: AttackZone
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2028056434574436919
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4752308332210704769}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2417723156129432690}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8269769458335602861
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4752308332210704769}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.038008135, y: 0.025, z: 0.029696006}
-  m_Center: {x: 0, y: 0.0125, z: 0.015261703}
---- !u!114 &7041215277899132877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4752308332210704769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72c33276c83808f49bae11a604d5db7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameFactoryCmd: {fileID: 11400000, guid: 89823967f77f23744837d0512a2cbaee, type: 2}
-  character: {fileID: 326685085}

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 938d146cb0449bb469f27f5c7912be72, type: 3}
+  m_Name: PlayerCharacterHulk
+  m_EditorClassIdentifier: 
+  id: 1
+  characterData: {fileID: 11400000, guid: c3a242d9d99c86847aa2de15cf64b128, type: 2}
+  characterFight: {fileID: 11400000, guid: 99a07daebe31f95498d429acfc4dfde1, type: 2}
+  characterDamage: {fileID: 11400000, guid: 19a60a63abeff6646a76eeae80aed2af, type: 2}

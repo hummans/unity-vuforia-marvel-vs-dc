@@ -12,10 +12,11 @@ namespace Components
     {
         public GameFactoryCmd gameFactoryCmd; 
         public Character character;
+        public Transform pointAttack;
 
         private float _nextFire = 0f;
- 
-        void OnTriggerEnter(Collider collider)
+
+        void OnRaycastEnter(GameObject collider)
         {
             // Attack
             ICharacter characterCollision = collider.gameObject.GetComponent<ICharacter>();
@@ -43,11 +44,16 @@ namespace Components
 
         void Update()
         {
-            if(_nextFire <= 0)
-                return;
-
             _nextFire -= Time.deltaTime;
             character.figthSystem.nextAttack.Value = (Int32)Math.Round(_nextFire);
+
+            RaycastHit hit;
+            if(Physics.Raycast(pointAttack.position, pointAttack.forward, out hit, character.figthSystem.distanceAttack) && _nextFire <= 0)
+            {
+                Debug.Log(hit.transform.gameObject.name);
+                Debug.DrawLine(pointAttack.position, hit.transform.position, Color.green, 0.1f);
+                OnRaycastEnter(hit.collider.gameObject);
+            }
         }
     }
 }

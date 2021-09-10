@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using ViewModel;
 
-namespace Commands
+namespace Components
 {
     public class CharacterInformationDisplay : MonoBehaviour
     {

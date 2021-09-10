@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4362657365726552131
+--- !u!1 &1224728864
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,50 +8,36 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3365577610893031105}
-  - component: {fileID: 3571180741510881877}
-  - component: {fileID: 3364409435394431290}
+  - component: {fileID: 1224728865}
+  - component: {fileID: 1224728866}
   m_Layer: 0
-  m_Name: AttackZone
+  m_Name: PointAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3365577610893031105
+--- !u!4 &1224728865
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4362657365726552131}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 1224728864}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0.017333338}
+  m_LocalScale: {x: 0.0013333334, y: 0.0013333333, z: 0.0013333334}
   m_Children: []
   m_Father: {fileID: 6345430248872384116}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &3571180741510881877
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4362657365726552131}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.05222583, y: 0.037499998, z: 0.04007833}
-  m_Center: {x: 0, y: 0.0185, z: 0.020034008}
---- !u!114 &3364409435394431290
+--- !u!114 &1224728866
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4362657365726552131}
+  m_GameObject: {fileID: 1224728864}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72c33276c83808f49bae11a604d5db7b, type: 3}
@@ -59,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameFactoryCmd: {fileID: 11400000, guid: 89823967f77f23744837d0512a2cbaee, type: 2}
   character: {fileID: 466483556}
+  pointAttack: {fileID: 1224728865}
 --- !u!1 &6345430248872020480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1331,7 +1318,7 @@ Transform:
   m_LocalScale: {x: 750, y: 750, z: 750}
   m_Children:
   - {fileID: 6345430248872384118}
-  - {fileID: 3365577610893031105}
+  - {fileID: 1224728865}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
