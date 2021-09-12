@@ -12,10 +12,12 @@ namespace Commands
         {
             return new PerfomAttackCmd(characterData, characterFight, characterAttackedData, characterAttackedDamage);
         }
+        /*
         public PlayTurnCmd PlayTurn(PlayerCharacter player1, PlayerCharacter player2, GameData gameData)
         {
             return new PlayTurnCmd(player1, player2, gameData);
         }
+        */
     }
 }
 

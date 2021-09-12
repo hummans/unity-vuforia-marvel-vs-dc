@@ -11,7 +11,7 @@ namespace ViewModel
         public int rate;
         [Range(10,100)] public float distanceAttack;
 
-        public IntReactiveProperty nextAttack {get; set;}
+        public IntReactiveProperty nextAttack;
         public ISubject<CharacterMotion> OnCharacterAttack = new Subject<CharacterMotion>();
     }
 }

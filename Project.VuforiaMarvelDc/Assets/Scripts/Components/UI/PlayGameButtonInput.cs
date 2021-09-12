@@ -14,7 +14,6 @@ namespace Components
     public class PlayGameButtonInput : MonoBehaviour
     {
         public GameFactoryCmd gameCommandFactory;
-        public GameData gameData;
     
         public Slider loadingSlider;
         public TextMeshProUGUI playText;
@@ -51,9 +50,8 @@ namespace Components
         {
             try
             {
-                SceneManager.LoadScene(scenename, LoadSceneMode.Single);
-                gameCommandFactory.PlayTurn(gameData.playerCharacters[0], gameData.playerCharacters[1], gameData).Execute();
-
+                SceneManager.LoadScene(scenename);
+                //gameCommandFactory.PlayTurn(gameData.playerCharacters[0], gameData.playerCharacters[1], gameData).Execute();
                 Debug.Log($"Loading {scenename} and closing current {SceneManager.GetActiveScene().name}");
             }
             catch(Exception e)
