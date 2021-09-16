@@ -41,15 +41,6 @@ Icon?
 ehthumbs.db
 Thumbs.db
 
-###
-# Ignore Packages
-###
-
-*.tgz
-.tgz
-Packages/com.ptc.vuforia.engine-10.1.4.tgz
-[Pp]ackages/
-
 # Ignore files
 Project.Build/
 Project.Resources/
